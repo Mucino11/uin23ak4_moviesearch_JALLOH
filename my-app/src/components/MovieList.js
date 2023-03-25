@@ -15,12 +15,12 @@ function MovieList() {
 
   if (data && data.length > 0) {
     return (
-      <div className='movie-list'>
+      <div className='movie-container'>
         {data.slice(0, 10).map(movie => (
-          <div key={movie.imdbID}>
-            <h3>{movie.Title}</h3>
-            <p>{movie.Year}</p>
-            <img src={movie.Poster} alt={movie.Title} />
+          <div className='movie' key={movie.imdbID}>
+            <h3 className='title'>{movie.Title}</h3>
+            <p className='year'>{movie.Year}</p>
+            <img className="poster" src={movie.Poster === "N/A" ? "https://via.placeholder.com/150x225.png?text=No+Poster+Available" : movie.Poster} alt={movie.Title}  />
           </div>
         ))}
       </div>

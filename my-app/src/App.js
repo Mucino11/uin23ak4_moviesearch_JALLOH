@@ -11,13 +11,11 @@ function App() {
     setShowMovieList(!hasResult);
   };
 
-  return (
+  return ( 
     <div>
       <Header />
       <SearchResult onSearchResult={handleSearchResult} />
       {showMovieList && <MovieList />}
-     
-     
     </div>
   );
 }

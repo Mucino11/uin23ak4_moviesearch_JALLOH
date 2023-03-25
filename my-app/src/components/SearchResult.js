@@ -23,25 +23,24 @@ function SearchResult({ onSearchResult }) {
 
   return (
     <div>
-      
-      <input type="text" placeholder="Enter a movie title...." value={searchTerm} onChange={handleInputChange} className="Search_bar"/>
+      <input className="search_bar" type="text" placeholder="Enter a movie title...." value={searchTerm} onChange={handleInputChange} />
       {data && data.length > 0 ? (
-        <div className='movie-list'>
-          <h2>{searchTerm}</h2>
+        <div className='movie-container'>
+          <h2 className='search-result'>Results for {searchTerm}</h2>
           {data.map(movie => (
-            <div key={movie.imdbID} className="movies">
-              <h3>{movie.Title}</h3>
-              <p>{movie.Year}</p>
-              <p>{movie.Genre}</p>
-              <p>{movie.Director}</p>
-              <p>{movie.Actors}</p>
-              <p>{movie.Awards}</p>
-              <img src={movie.Poster} alt={movie.Title}  />
+            <div className='movie' key={movie.imdbID}>
+              <h3 className='title'>{movie.Title}</h3>
+              <p className='year'>{movie.Year}</p>
+              <p className='genre'>{movie.Genre}</p>
+              <p className='director'>{movie.Director}</p>
+              <p className='actors'>{movie.Actors}</p>
+              <p className='awards'>{movie.Awards}</p>
+              <img className='poster' src={movie.Poster} alt={movie.Title} />
             </div>
           ))}
         </div>
       ) : (
-        <p>{null}</p>
+        <p>{data.length === 0 && "No result found."}</p>
       )}
     </div>
   );

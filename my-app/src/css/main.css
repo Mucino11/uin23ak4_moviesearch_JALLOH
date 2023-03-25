@@ -1,52 +1,126 @@
+/* Default styles for all devices */
+
+* {
+  padding: 0;
+  margin: 0;
+  /* add font family later */
+}
+
 :root {
-  --color-red: #e50914;
-  --color-black: #221f1f;
-  --color-gray: #f5f5f5;
-  --color-white: #ffffff;
-  --color-dark-gray: #141414;
-  --color-light-gray: #e5e5e5;
-  --color-blue: #0071eb;
-  --color-yellow: #f5c518;
-  --color-green: #b81d1d;
   --font-size: 16px;
+  --primary-color: #0A2647;
+  --secondary-color: #144272;
 }
 
-/*# sourceMappingURL=main.css.map */
-
-
-body{
-  text-align: center;
-  
+body {
+  background-color: var(--primary-color);
+  color: white;
 }
 
-h1{
+header {
+  background-color: var(--secondary-color);
+  height: 150px;
+  margin-bottom: 30px;
+}
+
+h1 {
   font-size: 5rem;
   margin-bottom: 15px;
- 
-}
-.Search_bar{
-    height: 40px;
-    width: 1300px;  
-    border-width: 3px;
-    margin-bottom: 40px;
+  padding-top: 15px;
+  text-align: center;
 }
 
-.movie-list {
+.search_bar {
+  height: 40px;
+  width: 100%;
+  max-width: 1300px;
+  border-width: 3px;
+  margin: auto;
+  margin-bottom: 40px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Movie card for main display content */
+
+.movie-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
-  
+  justify-content: center;
+  position: relative;
 }
 
-.movie-list-item {
-  flex-basis: 25%;
-  padding: 10px;
-  box-sizing: border-box;
- 
+.movie {
+  background-color: var(--secondary-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 250px;
 }
 
-.movies img {
-  width: 200px;
-  height: 300px;
+.movie-container h2 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 10px;
+  /* adjust as needed */
 }
 
+.title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.year {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.poster {
+  height: 250px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.search-result {
+  margin-bottom: 100px;
+}
+
+/* Media queries for tablet devices */
+
+@media (min-width: 768px) {
+  .search_bar {
+    width: 80%;
+  }
+
+  .movie {
+    width: 200px;
+  }
+}
+
+/* Media queries for mobile devices */
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .search_bar {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .movie {
+    width: 100%;
+    margin: 5px;
+    padding: 10px;
+  }
+
+  .movie-container h2 {
+    font-size: 1.5rem;
+  }
+}
