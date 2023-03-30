@@ -1,9 +1,7 @@
-/* Default styles for all devices */
-
 * {
   padding: 0;
   margin: 0;
-  /* add font family later */
+
 }
 
 :root {
@@ -43,7 +41,7 @@ h1 {
   align-items: center;
 }
 
-/* Movie card for main display content */
+
 
 .movie-container {
   display: flex;
@@ -67,7 +65,7 @@ h1 {
   left: 50%;
   transform: translateX(-50%);
   margin-bottom: 10px;
-  /* adjust as needed */
+ 
 }
 
 .title {
