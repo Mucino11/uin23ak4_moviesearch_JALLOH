@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import './css/main.css';
-import Header from './components/Header';
-import SearchResult from './components/SearchResult';
-import MovieList from './components/MovieList';
+import React, { useState } from "react";
+import "./css/main.css";
+import Header from "./components/Header";
+import SearchResult from "./components/SearchResult";
+import MovieList from "./components/MovieList";
 
 function App() {
   const [showMovieList, setShowMovieList] = useState(true);
@@ -11,7 +11,7 @@ function App() {
     setShowMovieList(!hasResult);
   };
 
-  return ( 
+  return (
     <div>
       <Header />
       <SearchResult onSearchResult={handleSearchResult} />
